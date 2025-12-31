@@ -1,0 +1,17 @@
+name = "Panipuri"
+uuid = "b4cd1234-5678-9012-3456-789012345678"
+authors = ["Panipuri Team"]
+version = "0.1.0"
+
+[deps]
+Agents = "6.0"
+Graphs = "1.9"
+DataFrames = "1.6"
+CSV = "0.10"
+Arrow = "2.7"
+Parquet = "0.8"
+GlobalSensitivity = "2.1"
+DrWatson = "2.13"
+Neo4j = "0.1" # Check for active Julia Neo4j clients or use HTTP
+HTTP = "1.0"
+JSON3 = "1.14"

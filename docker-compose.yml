@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  neo4j:
+    image: neo4j:community
+    container_name: panipuri_neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=neo4j/password
+    volumes:
+      - ./data/neo4j/data:/data
+      - ./data/neo4j/logs:/logs
+      - ./data/neo4j/import:/var/lib/neo4j/import
+      - ./data/neo4j/plugins:/plugins
+
+  minio:
+    image: minio/minio
+    container_name: panipuri_minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      - MINIO_ROOT_USER=minioadmin
+      - MINIO_ROOT_PASSWORD=minioadmin
+    command: server /data --console-address ":9001"
+    volumes:
+      - ./data/minio:/data
+
+  # Placeholder for Airflow (setup can be complex, keeping it minimal for now)
+  # airflow-webserver: ...
+  # airflow-scheduler: ...
+
+  # Placeholder for Julia Simulation Container
+  # simulation:
+  #   build: ./simulation
+  #   volumes:
+  #     - ./simulation:/app

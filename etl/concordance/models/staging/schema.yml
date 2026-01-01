@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: raw_data
+    schema: main
+    tables:
+      - name: un_comtrade_hs
+        description: "Raw trade data from UN Comtrade with HS codes"
+      - name: wiod_sectors
+        description: "Target sector definitions from WIOD"
+      - name: concordance_weights
+        description: "Mapping table with weights (HS -> ISIC/WIOD)"
+
+models:
+  - name: stg_trade_flows
+    description: "Cleaned trade flows ready for mapping"
+  - name: stg_concordance_rules
+    description: "Cleaned concordance rules with normalized weights"

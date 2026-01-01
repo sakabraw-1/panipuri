@@ -1,0 +1,7 @@
+panipuri_duckdb:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: '../../data/panipuri.duckdb'  # Relative path to the data directory
+      threads: 4
